@@ -17,13 +17,20 @@ const HomePage = () => {
     }
   };
 
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(prevState => !prevState);
+  };
+
   return (
     <div className="h-screen w-screen overflow-hidden items-center justify-center">
-      <div className="z-50 right-0 top-1 absolute">
+      <div className="h-3/4 w-1/2 z-50 right-4 top-2 fixed overflow-hidden">
         <button
-          className="z-30 relative mr-3 mt-3 cursor-pointer group bg-transparent hover:bg-neutral-700 text-white font-semibold text-sm px-2 py-2 rounded-full transition-all duration-200 ease-in-out shadow hover:shadow-lg w-30 h-12"
+          onClick={toggleMenu}
+          className={`menu_button z-40 absolute right-0 mr-3 mt-3 cursor-pointer group hover:bg-neutral-700 text-white ${isMenuOpen ? "bg-neutral-700" : "bg-transparent" }  font-semibold text-sm px-2 py-2 rounded-full transition-all duration-200 ease-in-out shadow hover:shadow-lg w-30 h-12`}
         >
-          <div className="relative flex items-center justify-center gap-2">
+          <div className="relative flex items-center justify-center gap-2 ">
             <span className="relative inline-block overflow-hidden">
               <span className="block transition-transform duration-300 group-hover:-translate-y-full">
                 Menu
@@ -48,7 +55,11 @@ const HomePage = () => {
             </svg>
           </div>
         </button>
-        <div className="hidden absolute right-0 top-0 h-[60vh] w-[37vw] z-20 bg-white rounded-4xl"></div>
+        <div className={`menu absolute right-0 top-0 h-[60vh] w-[37vw] z-20 bg-white rounded-4xl transition-all duration-300 transform ${
+            isMenuOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'
+          }`}>
+
+          </div>
       </div>
 
       <video src={Background} autoPlay loop muted className="h-screen w-screen object-cover" />
