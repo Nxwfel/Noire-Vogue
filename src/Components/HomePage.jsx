@@ -1,21 +1,10 @@
 import React, { useState } from 'react';
 import Background from '../Assets/background.mp4';
-import Pants from '../Assets/pants.png';
-import Top from '../Assets/top.png';
-import Shoes from '../Assets/shoes.png';
+import Pants from '../Assets/Pants.jpg';
+import Top from '../Assets/Top.jpg';
 import '../Style/HomePage.css';
 
 const HomePage = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const images = [Top, Pants, Shoes];
-
-  const updateSlider = (direction) => {
-    if (direction === 'left') {
-      setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
-    } else if (direction === 'right') {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }
-  };
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -25,10 +14,10 @@ const HomePage = () => {
 
   return (
     <div className="h-screen w-screen overflow-hidden items-center justify-center">
-      <div className="h-3/4 w-1/2 z-50 right-4 top-2 fixed overflow-hidden">
+      <div className="h-3/4 w-1/2 z-30 right-4 top-2 fixed overflow-hidden">
         <button
           onClick={toggleMenu}
-          className={`menu_button z-40 absolute right-0 mr-3 mt-3 cursor-pointer group hover:bg-neutral-700 text-white ${isMenuOpen ? "bg-neutral-700" : "bg-transparent" }  font-semibold text-sm px-2 py-2 rounded-full transition-all duration-200 ease-in-out shadow hover:shadow-lg w-30 h-12`}
+          className={`menu_button z-50 absolute right-0 mr-3 mt-3 cursor-pointer group hover:bg-neutral-700 text-white ${isMenuOpen ? "bg-neutral-700" : "bg-transparent" }  font-semibold text-sm px-2 py-2 rounded-full transition-all duration-200 ease-in-out shadow hover:shadow-lg w-30 h-12`}
         >
           <div className="relative flex items-center justify-center gap-2 ">
             <span className="relative inline-block overflow-hidden">
@@ -55,8 +44,10 @@ const HomePage = () => {
             </svg>
           </div>
         </button>
-        <div className={`menu absolute right-0 top-0 h-[60vh] w-[37vw] z-20 bg-white rounded-4xl transition-all duration-300 transform ${
-            isMenuOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'
+
+        {/* Menu */}
+        <div className={`menu absolute right-0 top-0 h-[60vh] w-[37vw] z-40 bg-white rounded-4xl transition-all duration-300 ${
+            isMenuOpen ? 'opacity-100' : 'opacity-0'
           }`}>
 
           </div>
@@ -64,79 +55,31 @@ const HomePage = () => {
 
       <video src={Background} autoPlay loop muted className="h-screen w-screen object-cover" />
 
-      <div className="absolute h-1/2 w-screen top-40 z-30 bg-transparent justify-center items-center">
-        <div className="flex items-center justify-center">
-          <div className="track relative w-screen h-[400px] overflow-hidden">
-            {/* Left Button */}
-            <button
-              id="left_button"
-              onClick={() => updateSlider('left')}
-              className="absolute left-0 top-1/2 z-10 cursor-pointer"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="50px"
-                height="50px"
-                viewBox="0 0 24 24"
-                className="stroke-yellow-600"
-              >
-                <path
-                  strokeLinejoin="round"
-                  strokeLinecap="round"
-                  strokeWidth="1.5"
-                  d="M11 6L5 12M5 12L11 18M5 12H19"
-                />
-              </svg>
-            </button>
+      <div className={`absolute h-1/2 w-screen top-40 ${isMenuOpen ? 'z-20' : 'z-40'} bg-transparent justify-center items-center`}>
 
             {/* Images */}
-            <div className="relative h-full w-full flex flex-col items-center">
-              {images.map((image, index) => (
-                <div 
-                  key={index} 
-                  className="absolute w-full h-full flex flex-col items-center"
-                  style={{
-                    transform: `translateX(${(index - currentIndex) * 100}%)`,
-                    transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
-                    opacity: index === currentIndex ? 1 : 0,
-                  }}
-                >
-                  <h1 className="text-center text-4xl font-syne text-white mt-4 relative z-20">
-                    {index === 0 ? 'Tops' : index === 1 ? 'Pants' : 'Shoes'}
-                  </h1>
-                  <img
-                    src={image}
-                    alt={`Slide ${index + 1}`}
-                    className="img w-[300px] h-[300px] object-contain transition-all duration-500 mt-8"
-                  />
-                </div>
-              ))}
-            </div>
+            <div className="relative gap-20 h-full w-full flex justify-center items-center z-30">
+              
+            <div className='h-96 w-72  bg-amber-50 rounded-xl shadow-lg items-center justify-center text-center hover:-translate-y-2 hover:transition-all'>
+              <div className='relative ml-auto mr-auto mt-2 h-2/3 w-11/12 bg-black rounded-xl'>
+                  <img src={Top} alt="Top" className="h-full w-full object-cover rounded-xl grayscale" loading='lazy' />
+                </div>  
+                  <h1 className='text-4xl font-syne font-bold'>Tops</h1>
+                  <p className='text-xl fnot-syne'>Good top can Make a whole dress</p>
+              </div>
 
-            {/* Right Button */}
-            <button
-              id="right_button"
-              onClick={() => updateSlider('right')}
-              className="absolute right-3 top-1/2 z-10 cursor-pointer"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="50px"
-                height="50px"
-                viewBox="0 0 24 24"
-                className="stroke-yellow-600 rotate-180"
-              >
-                <path
-                  strokeLinejoin="round"
-                  strokeLinecap="round"
-                  strokeWidth="1.5"
-                  d="M11 6L5 12M5 12L11 18M5 12H19"
-                />
-              </svg>
-            </button>
+
+              <div className='h-96 w-72 bg-amber-50 rounded-xl shadow-lg items-center justify-center text-center hover:-translate-y-2 hover:transition-all'>
+                <div className='relative ml-auto mr-auto mt-2 h-2/3 w-11/12 bg-black rounded-xl'>
+                  <img src={Pants} alt="Top" className="h-full w-full object-cover object-left rounded-xl grayscale" loading='lazy'/>
+                </div>  
+                <h1 className='text-4xl font-syne font-bold'>Pants</h1>
+                <p className='text-xl fnot-syne'>Good Pair of Pants can make you avoid arrest</p>
+              </div>
+
+             </div>
+
           </div>
-        </div>
-      </div>
 
       <div className="absolute bottom-10 left-3 text-start">
         <h1 className="font-syne text-6xl text-white">Noire Vauge</h1>
