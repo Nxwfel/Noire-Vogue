@@ -56,8 +56,8 @@ const HomePage = () => {
 
 
       <div className="absolute bottom-0 left-3 text-start">
-        <h1 className="font-syne text-6xl font-bold text-amber-100">Noire Vauge</h1>
-        <h3 className="font-syne text-8xl font-extralight tracking-widest text-neutral-600">Elegance a porter</h3>
+        <h1 className="font-syne text-6xl font-bold text-zinc-50">Noire Vauge</h1>
+        <h3 className="font-french text-8xl font-normal text-neutral-700">Elegance a porter</h3>
       </div>
     </div>
   );
