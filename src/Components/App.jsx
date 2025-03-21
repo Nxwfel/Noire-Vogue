@@ -1,7 +1,8 @@
-import react from 'react'
+import React from 'react'
 import HomePage from './HomePage.jsx'
 import ArticlesPage from './ArticlesPage.jsx'
 import About from './About.jsx'
+import Footer from './Footer.jsx'
 function App() {
 
   return (
@@ -9,6 +10,7 @@ function App() {
     <HomePage />
     <About />
     <ArticlesPage />
+    <Footer />
     </>
   )
 }
