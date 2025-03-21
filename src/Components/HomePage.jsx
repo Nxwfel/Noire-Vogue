@@ -55,7 +55,7 @@ const HomePage = () => {
 
       <video src={Background} autoPlay loop muted className="h-screen w-screen object-cover" />
 
-      <div className={`absolute h-1/2 w-screen top-40 ${isMenuOpen ? 'z-20' : 'z-40'} bg-transparent justify-center items-center`}>
+      <div className={`absolute h-1/2 w-screen top-30 ${isMenuOpen ? 'z-20' : 'z-40'} bg-transparent justify-center items-center`}>
 
             {/* Images */}
             <div className="relative gap-20 h-full w-full flex justify-center items-center z-30">
@@ -81,9 +81,9 @@ const HomePage = () => {
 
           </div>
 
-      <div className="absolute bottom-10 left-3 text-start">
-        <h1 className="font-syne text-6xl text-white">Noire Vauge</h1>
-        <h3 className="font-syne text-2xl text-neutral-600">Elegance a porter</h3>
+      <div className="absolute bottom-0 left-3 text-start">
+        <h1 className="font-syne text-6xl font-bold text-white">Noire Vauge</h1>
+        <h3 className="font-syne text-8xl font-bold tracking-widest text-neutral-600">Elegance a porter</h3>
       </div>
     </div>
   );
