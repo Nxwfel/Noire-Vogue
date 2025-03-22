@@ -1,0 +1,178 @@
+:root{
+    --background: #9bdd32;
+}
+
+.wrapper {
+    display: inline-flex;
+    list-style: none;
+    height: 120px;
+    width: 100%;
+    padding-top: 40px;
+    font-family: "Poppins", sans-serif;
+    justify-content: center;
+  }
+  
+  .wrapper .icon {
+    position: relative;
+    background: #fff;
+    border-radius: 50%;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: #fff;
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #fff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  
+  .wrapper .icon:hover span,
+  .wrapper .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+  }
+  
+  .wrapper .facebook:hover,
+  .wrapper .facebook:hover .tooltip,
+  .wrapper .facebook:hover .tooltip::before {
+    background: #1877f2;
+    color: #fff;
+  }
+  
+  .wrapper .twitter:hover,
+  .wrapper .twitter:hover .tooltip,
+  .wrapper .twitter:hover .tooltip::before {
+    background: #1da1f2;
+    color: #fff;
+  }
+  
+  .wrapper .instagram:hover,
+  .wrapper .instagram:hover .tooltip,
+  .wrapper .instagram:hover .tooltip::before {
+    background: #e4405f;
+    color: #fff;
+  }
+  .input-container {
+    position: relative;
+    margin: 50px auto;
+    width: 190px;
+  }
+  
+  .input-container input[type="text"] {
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-bottom: 2px solid #a5a2a2;
+    outline: none;
+    width: 100%;
+    background-color: transparent;
+  }
+  
+  
+  .input-container input[type="text"]:focus~.label,
+          .input-container input[type="text"]:valid~.label {
+    top: -20px;
+    transition: 0.3s;
+    color: var(--background);
+  }
+  
+  .input-container .underline {
+    position: absolute;
+    bottom: 4px;
+    left: -7px;
+    height: 2px;
+    width: 110%;
+    background-color: var(--background);
+    transform: scaleX(0);
+  }
+  
+  .input-container .sideline {
+    position: relative;
+    bottom: 15px;
+    right: 18px;
+    height: 2px;
+    width: 18%;
+    background-color: var(--background);
+    transform: scaleX(0);
+    rotate: 90deg;
+  }
+  
+  .input-container .upperline {
+    position: absolute;
+    bottom: 30px;
+    left: -8px;
+    height: 2px;
+    width: 110%;
+    background-color: var(--background);
+    transform: scaleX(0);
+  }
+  
+  .input-container .line {
+    position: relative;
+    bottom: 17px;
+    left: 178px;
+    height: 2px;
+    width: 18%;
+    background-color: var(--background);
+    transform: scaleX(0);
+    rotate: 90deg;
+  }
+  
+  .input-container input[type="text"]:focus~.underline,
+          .input-container input[type="text"]:valid~.underline {
+    transform: scaleX(1);
+    transition: 1s;
+  }
+  
+  .input-container input[type="text"]:focus~.sideline,
+          .input-container input[type="text"]:valid~.sideline {
+    transform: scaleX(1);
+    transition: 1s;
+  }
+  
+  .input-container input[type="text"]:focus~.upperline,
+          .input-container input[type="text"]:valid~.upperline {
+    transform: scaleX(1);
+    transition: 1s;
+  }
+  
+  .input-container input[type="text"]:focus~.line,
+          .input-container input[type="text"]:valid~.line {
+    transform: scaleX(1);
+    transition: 1s;
+  }

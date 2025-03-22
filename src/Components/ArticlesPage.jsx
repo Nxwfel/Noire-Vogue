@@ -5,7 +5,7 @@ const ArticlesPage = () => {
   return (
     <div className='h-screen w-screen bg-black'>
             <div className='pt-30 bg-transparent justify-center items-center text-center'>
-             <h1 className='font-french font-extralight text-8xl text-white mb-10'>We <span className='font-syne font-bold'>Provide</span> </h1>
+             <h1 className='font-french font-extralight text-8xl  mb-10 text-lime-400'>We <span className='font-syne font-bold text-white'>Provide</span> </h1>
             {/* Images */}
             <div className="relative gap-20 h-full w-full flex justify-center items-center z-30">
               

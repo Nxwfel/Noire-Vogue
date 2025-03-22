@@ -15,7 +15,7 @@ const HomePage = () => {
       <div className="h-3/4 w-1/2 z-30 right-4 top-2 fixed overflow-hidden">
         <button
           onClick={toggleMenu}
-          className={`menu_button z-50 absolute right-0 mr-3 mt-3 cursor-pointer group hover:bg-neutral-700 text-white ${isMenuOpen ? "bg-neutral-700" : "bg-transparent" }  font-semibold text-sm px-2 py-2 rounded-full transition-all duration-200 ease-in-out shadow hover:shadow-lg w-30 h-12`}
+          className={`menu_button z-50 absolute right-0 mr-3 mt-3 cursor-pointer group hover:bg-lime-400 text-white ${isMenuOpen ? "bg-lime-400" : "bg-transparent" }  font-semibold text-sm px-2 py-2 rounded-full transition-all duration-200 ease-in-out shadow hover:shadow-lg w-30 h-12`}
         >
           <div className="relative flex items-center justify-center gap-2 ">
             <span className="relative inline-block overflow-hidden">
@@ -44,10 +44,15 @@ const HomePage = () => {
         </button>
 
         {/* Menu */}
-        <div className={`menu absolute right-0 top-0 h-[60vh] w-[37vw] z-40 bg-white rounded-4xl transition-all duration-300 ${
+        <div className={`menu absolute justify-start items-center right-0 top-0 h-[60vh] w-[37vw] z-40 bg-white rounded-4xl transition-all duration-300 ${
             isMenuOpen ? 'opacity-100' : 'opacity-0'
           }`}>
-
+          <ul className='flex flex-col gap-4 p-20'>
+            <li className='font-syne text-4xl font-bold text-black hover:scale-105 hover:transition-transform cursor-pointer'>- Home</li>
+            <li className='font-syne text-4xl font-bold text-black hover:scale-105 hover:transition-transform cursor-pointer'>- About us</li>
+            <li className='font-syne text-4xl font-bold text-black hover:scale-105 hover:transition-transform cursor-pointer'>- Articles</li>
+            <li className='font-syne text-4xl font-bold text-black hover:scale-105 hover:transition-transform cursor-pointer'>- Contact us</li>
+          </ul>
           </div>
       </div>
 
@@ -57,7 +62,7 @@ const HomePage = () => {
 
       <div className="absolute bottom-0 left-3 text-start">
         <h1 className="font-syne text-6xl font-bold text-zinc-50">Noire Vauge</h1>
-        <h3 className="font-french text-8xl font-normal text-neutral-700">Elegance a porter</h3>
+        <h3 className="font-french text-8xl font-normal text-lime-400">Elegance a porter</h3>
       </div>
     </div>
   );
