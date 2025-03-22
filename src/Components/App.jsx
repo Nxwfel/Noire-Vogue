@@ -5,7 +5,7 @@ const ArticlesPage = lazy (() => import ('./ArticlesPage.jsx'));
 const About = lazy (() => import ('./About.jsx')) ;
 const Footer = lazy(() => import ('./Footer.jsx'))
 const Break = lazy(() => import ('././Break.jsx'))
-
+const ProductPage = lazy(() => import ('./ProductPage.jsx'))
 import Lenis from 'lenis';
 function App() {
  
@@ -26,6 +26,7 @@ function App() {
     <Break />
     <ArticlesPage />
     <Footer />
+    <ProductPage />
     </>
   )
 }
