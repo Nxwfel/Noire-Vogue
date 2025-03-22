@@ -1,10 +1,11 @@
 import React from 'react';
+import {lazy, useEffect } from 'react';
 import HomePage from './HomePage.jsx';
-import ArticlesPage from './ArticlesPage.jsx';
-import About from './About.jsx';
-import Footer from './Footer.jsx';
-import Break from './Break.jsx';
-import { useEffect } from 'react';
+const ArticlesPage = lazy (() => import ('./ArticlesPage.jsx'));
+const About = lazy (() => import ('./About.jsx')) ;
+const Footer = lazy(() => import ('./Footer.jsx'))
+const Break = lazy(() => import ('././Break.jsx'))
+
 import Lenis from 'lenis';
 function App() {
  
