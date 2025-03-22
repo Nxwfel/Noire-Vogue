@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Background from '../Assets/background.mp4';
 import '../Style/HomePage.css';
+import { useScroll, useTransform, motion } from 'framer-motion';
+import { useRef } from 'react';
 
 const HomePage = () => {
 
@@ -10,8 +12,19 @@ const HomePage = () => {
     setIsMenuOpen(prevState => !prevState);
   };
 
+  const container = useRef();
+
+  const { scrollYProgress } = useScroll({
+    target: container,
+
+    offset: ['start start', 'end start']
+  })
+
+  const y = useTransform(scrollYProgress, [0, 1], ["0vh", "150vh"])
+
   return (
     <div className="h-screen w-screen overflow-hidden items-center justify-center">
+      <motion.div style={{y}} className='relative h-full'>
       <div className="h-3/4 w-1/2 z-30 right-4 top-2 fixed overflow-hidden">
         <button
           onClick={toggleMenu}
@@ -64,6 +77,7 @@ const HomePage = () => {
         <h1 className="font-syne text-6xl font-bold text-zinc-50">Noire Vauge</h1>
         <h3 className="font-french text-8xl font-normal text-lime-400">Elegance a porter</h3>
       </div>
+      </motion.div>
     </div>
   );
 };
