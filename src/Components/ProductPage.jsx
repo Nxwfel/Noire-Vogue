@@ -1,5 +1,6 @@
 import React from 'react'
 import Bg3 from '../Assets/Bg3.png';
+import '../Style/ProductPage.css';
 const ProductPage = () => {
   return (
     <div 
@@ -35,24 +36,39 @@ const ProductPage = () => {
      <div className='h-2/3 w-2/3 relative ml-auto mr-auto rounded-xl border-1 border-stone-400 bg-white/20 flex items-center justify-center text-justify'>
       <div id='Product-Pic' className='relative mt-auto mb-auto mr-auto -ml-10 bg-white h-2/3 w-1/2'></div>
       <div id='Product-infos'className='flex flex-col w-1/2 h-full'> 
-        <div id='Product-name' className='h-1/3 w-full'>
-        <h1>XVII - Full-White</h1>
-        <p>Available: 30 pieces</p>
+        <div id='Product-name' className='h-1/3 w-full mt-10'>
+        <h1 className='font-syne font-bold text-4xl'>XVII - Full-White</h1>
+        <p className='font-syne font-semibold '>Available: 30 pieces</p>
         </div>
         <div id='size'>
-   
-        <div class="flex flex-wrap justify-center items-center w-11/12 rounded-full select-none gap-2">
-        <label class="text-slate-400">
-          <input type="checkbox" class="h-[1px] opacity-0 overflow-hidden absolute whitespace-nowrap w-[1px] peer" />
-          <span class="peer-checked:border-green-600 peer-checked:shadow-green-600/10 peer-checked:text-green-600 peer-checked:before:border-blue-500 peer-checked:before:bg-blue-500 peer-checked:before:opacity-100 peer-checked:before:scale-100 flex flex-col items-center justify-center w-9 h-[2.5rem] rounded-lg shadow-lg transition-all duration-200 cursor-pointer relative border-slate-300 border-[3px] bg-white before:absolute before:block before:w-5 before:h-5 before:border-[3px]  before:rounded-full before:top-1 before:left-1 before:opacity-0 before:transition-transform before:scale-0 before:text-white before:text-xs before:flex before:items-center before:justify-center hover:border-green-600 hover:before:scale-100 hover:before:opacity-100">
-            <span class="transition-all duration-100">
-            </span>
-            <span class="transition-all duration-300 text-center">XL</span>
-          </span>
-        </label>
-
-</div>
+            <div class="radio-input">
+              <label>
+                <input type="radio" id="value-1" name="value-radio" value="value-1" />
+                <span>XL</span>
+              </label>
+              <label>
+                <input type="radio" id="value-2" name="value-radio" value="value-2" />
+                <span>L</span>
+              </label>
+              <label>
+                <input type="radio" id="value-3" name="value-radio" value="value-3" />
+                <span>M</span>
+              </label>
+              <label>
+                <input type="radio" id="value-4" name="value-radio" value="value-4" />
+                <span>S</span>
+              </label>
+              <span class="selection"></span>
+            </div>
         </div>
+        <div id='Product-quantity' className='h-1/3 w-full mt-10'>
+          <div class="number-control">
+            <div class="number-left"></div>
+            <input type="number" name="number" class="number-quantity" />
+            <div class="number-right"></div>
+          </div>
+        </div>
+        <div id='Product-price' className='h-1/3 w-full'> <h1 id='Price'> </h1></div>
       </div>
      </div>
     </div>
