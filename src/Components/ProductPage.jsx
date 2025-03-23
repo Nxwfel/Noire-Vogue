@@ -1,7 +1,28 @@
-import React from 'react'
+import React , {useState} from 'react'
 import Bg3 from '../Assets/Bg3.png';
+import Product from '../Assets/Product2.png';
 import '../Style/ProductPage.css';
 const ProductPage = () => {
+       const [quantity, setQuantity] = useState(1)
+       const [price, setPrice] = useState(250)
+
+       const Quantity_addition = () =>{
+          setQuantity(quantity+1)
+          setPrice(price+250)
+       } 
+        const Quantity_substraction = () =>{
+            setQuantity(quantity-1)
+            setPrice(price-250)
+            if(quantity === 1){
+                setQuantity(1)
+                setPrice(250)
+            }
+            else if(price <= 0){
+              setQuantity(1)
+                setPrice(250)
+            }
+        }
+
   return (
     <div 
     className='h-screen w-screen items-center justify-center bg-cover bg-center flex flex-col'
@@ -34,7 +55,9 @@ const ProductPage = () => {
       </button>
 
      <div className='h-2/3 w-2/3 relative ml-auto mr-auto rounded-xl border-1 border-stone-400 bg-white/20 flex items-center justify-center text-justify'>
-      <div id='Product-Pic' className='relative mt-auto mb-auto mr-auto -ml-10 bg-white h-2/3 w-1/2'></div>
+      <div id='Product-Pic' className='relative mt-auto mb-auto  mr-auto -ml-30 rotate-20 h-2/3 w-1/2'>
+      <img src={Product} alt=""  className='-mt-40'/>
+      </div>
       <div id='Product-infos'className='flex flex-col w-1/2 h-full'> 
         <div id='Product-name' className='h-1/3 w-full mt-10'>
         <h1 className='font-syne font-bold text-4xl'>XVII - Full-White</h1>
@@ -62,13 +85,13 @@ const ProductPage = () => {
             </div>
         </div>
         <div id='Product-quantity' className='h-1/3 w-full mt-10'>
-          <div class="number-control">
-            <div class="number-left"></div>
-            <input type="number" name="number" class="number-quantity" />
-            <div class="number-right"></div>
-          </div>
+           <div className='h-10 w-30 bg-white rounded-4xl flex items-center justify-center'>  
+            <button onClick={Quantity_substraction} className='h-10 w-10 bg-black text-white rounded-l-4xl justify-start items-start mr-auto '>-</button>
+            <h1 className='font-syne font-bold text-green-600'>{quantity}</h1>
+            <button onClick={Quantity_addition} className='h-10 w-10 bg-black text-white rounded-r-4xl justify-end items-end ml-auto -mr-0.5'>+</button>
+           </div>
         </div>
-        <div id='Product-price' className='h-1/3 w-full'> <h1 id='Price'> </h1></div>
+        <div id='Product-price' className='h-1/3 w-full'><h1 id='Price' className='font-syne text-2xl font-bold text-white'>{price} $ </h1></div>
       </div>
      </div>
     </div>
