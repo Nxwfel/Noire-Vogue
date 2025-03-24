@@ -13,10 +13,10 @@ const About = () => {
               
              <div className='flex justify-self-start mt-8 justify-center items-center gap-10'>
                <div className='h-42 w-30 rounded-xl bg-white overflow-hidden hover:scale-110 hover:transition-transform'>
-                 <img src={Block1} className='object-cover' />
+                 <img src={Block1} className='object-cover' loading='lazy' />
                </div>
                <div className='h-42 w-30 rounded-xl bg-white overflow-hidden hover:scale-110 hover:transition-transform'>
-                 <img src={Block2} className='object-cover' />
+                 <img src={Block2} className='object-cover' loading='lazy' />
                </div>
               </div>
               
