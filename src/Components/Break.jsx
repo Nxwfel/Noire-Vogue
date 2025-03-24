@@ -29,7 +29,7 @@ const Break = () => {
         <div className='fixed top-[-10vh] left-0 h-[120vh] w-full'>
         
             <motion.div style={{y}} className='relative w-full h-full z-20'> 
-              <img src={Bg2} fill className="h-full object-cover"/>
+              <img src={Bg2} fill className="h-full object-cover" loading='lazy'/>
             </motion.div>
 
         </div>
