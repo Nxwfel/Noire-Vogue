@@ -2,6 +2,7 @@ import React , {useState} from 'react'
 import Bg3 from '../Assets/Bg3.png';
 import Product from '../Assets/Product2.png';
 import '../Style/ProductPage.css';
+import { Link } from 'react-router-dom';
 const ProductPage = () => {
        const [quantity, setQuantity] = useState(1)
        const [price, setPrice] = useState(250)
@@ -28,6 +29,7 @@ const ProductPage = () => {
     className='h-screen w-screen items-center justify-center bg-cover bg-center flex flex-col'
     style={{ backgroundImage: `url(${Bg3})` }}
     >
+      <Link to={'/products'}>
     <button
         class="bg-transparent mr-auto ml-20 mb-10 text-center w-48 rounded-2xl h-14 relative text-white cursor-pointer text-xl font-syne font-semibold group"
         type="button"
@@ -53,7 +55,7 @@ const ProductPage = () => {
         </div>
         <p class="translate-x-2">Go Back</p>
       </button>
-
+      </Link>
      <div className='h-2/3 w-2/3 relative ml-auto mr-auto rounded-xl border-1 border-stone-400 bg-white/20 flex items-center justify-center text-justify'>
       <div id='Product-Pic' className='relative mt-auto mb-auto  mr-auto -ml-30 rotate-20 h-2/3 w-1/2'>
       <img src={Product} alt=""  className='-mt-40'/>

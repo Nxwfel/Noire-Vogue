@@ -26,6 +26,7 @@ const HomePage = () => {
     <div className="h-screen w-screen overflow-hidden items-center justify-center">
       <motion.div style={{y}} className='relative h-full'>
       <div className="h-3/4 w-1/2 z-30 right-4 top-2 fixed overflow-hidden">
+        
         <button
           onClick={toggleMenu}
           className={`menu_button z-50 absolute right-0 mr-3 mt-3 cursor-pointer group hover:bg-lime-400 text-white ${isMenuOpen ? "bg-lime-400" : "bg-transparent" }  font-semibold text-sm px-2 py-2 rounded-full transition-all duration-200 ease-in-out shadow hover:shadow-lg w-30 h-12`}
