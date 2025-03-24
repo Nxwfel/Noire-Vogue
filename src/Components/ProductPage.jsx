@@ -91,7 +91,7 @@ const ProductPage = () => {
             <button onClick={Quantity_addition} className='h-10 w-10 bg-black text-white rounded-r-4xl justify-end items-end ml-auto -mr-0.5'>+</button>
            </div>
         </div>
-        <div id='Product-price' className='h-1/3 w-full'><h1 id='Price' className='font-syne text-2xl font-bold text-white'>{price} $ </h1></div>
+        <div id='Product-price' className='h-1/3 w-full'><h1 id='Price' className='font-syne text-2xl font-bold text-black'>Price: <span className='text-white'>{price} $ </span> </h1></div>
       </div>
      </div>
     </div>

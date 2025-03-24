@@ -1,7 +1,7 @@
 import React from 'react'
 import { useScroll, useTransform, motion } from 'framer-motion';
 import { useRef } from 'react';
-import Bg2 from '../Assets/Bg2.png';
+import Bg2 from '../Assets/Bg3.png';
 const Break = () => {
     const container = useRef();
 
@@ -29,7 +29,7 @@ const Break = () => {
         <div className='fixed top-[-10vh] left-0 h-[120vh] w-full'>
         
             <motion.div style={{y}} className='relative w-full h-full z-20'> 
-              <img src={Bg2} fill className="h-full object-cover hue-rotate-250"/>
+              <img src={Bg2} fill className="h-full object-cover"/>
             </motion.div>
 
         </div>
