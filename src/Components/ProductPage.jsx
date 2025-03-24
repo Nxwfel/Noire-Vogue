@@ -26,12 +26,12 @@ const ProductPage = () => {
 
   return (
     <div 
-    className='h-screen w-screen items-center justify-center bg-cover bg-center flex flex-col'
+    className='h-screen w-screen bg-cover bg-center flex flex-col'
     style={{ backgroundImage: `url(${Bg3})` }}
     >
       <Link to={'/products'}>
     <button
-        class="bg-transparent mr-auto ml-20 mb-10 text-center w-48 rounded-2xl h-14 relative text-white cursor-pointer text-xl font-syne font-semibold group"
+        class="bg-transparent ml-2 mr-auto mb-10 mt-10 text-center w-48 rounded-2xl h-14 relative text-white cursor-pointer text-xl font-syne font-semibold group"
         type="button"
       >
         <div
@@ -94,6 +94,7 @@ const ProductPage = () => {
            </div>
         </div>
         <div id='Product-price' className='h-1/3 w-full'><h1 id='Price' className='font-syne text-2xl font-bold text-black'>Price: <span className='text-white'>{price} $ </span> </h1></div>
+        
       </div>
      </div>
     </div>

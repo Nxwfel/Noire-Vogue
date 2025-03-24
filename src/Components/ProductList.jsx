@@ -21,7 +21,7 @@ const ProductList = () => {
 
   return (
     <div 
-    className='h-fit w-screen bg-center bg-cover flex flex-col items-center text-center'
+    className='h-fit w-screen bg-center bg-cover flex flex-col'
     style={{ backgroundImage: `url(${Bg3})` }}	
     >
         <h1 className='font-syne font-bold text-sm text-black ml-auto mr-auto mt-4 uppercase'>noire-vauge</h1>
@@ -40,7 +40,7 @@ const ProductList = () => {
           </div>
                 <Link to={'/'}>
               <button
-                  class="bg-transparent mr-auto ml-20 mb-10 text-center w-48 rounded-2xl h-14 relative text-white cursor-pointer text-xl font-syne font-semibold group"
+                  class="bg-transparent mr-auto ml-2 mb-10 text-center w-48 rounded-2xl h-14 relative text-white cursor-pointer text-xl font-syne font-semibold group"
                   type="button"
                 >
                   <div
