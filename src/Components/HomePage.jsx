@@ -25,7 +25,7 @@ const HomePage = () => {
   return (
     <div className="h-screen w-screen overflow-hidden items-center justify-center">
       <motion.div style={{y}} className='relative h-full'>
-      <div className="h-3/4 w-1/2 z-30 right-4 top-2 fixed overflow-hidden">
+      <div className="h-3/4 w-1/2 max-md:w-[80vw] z-30 right-4 top-2 fixed overflow-hidden">
         
         <button
           onClick={toggleMenu}
@@ -58,14 +58,14 @@ const HomePage = () => {
         </button>
 
         {/* Menu */}
-        <div className={`menu absolute justify-start items-center right-0 top-0 h-[60vh] w-[37vw] z-40 bg-white rounded-4xl transition-all duration-300 ${
+        <div className={`menu absolute justify-start items-center right-0 top-0 h-[60vh] max-md:w-[78vw] w-[37vw] z-40 bg-white rounded-4xl transition-all duration-300 ${
             isMenuOpen ? 'opacity-100' : 'opacity-0'
           }`}>
-          <ul className='flex flex-col gap-4 p-20'>
-            <li className='font-syne text-4xl font-bold text-black hover:scale-105 hover:transition-transform cursor-pointer'>- Home</li>
-            <li className='font-syne text-4xl font-bold text-black hover:scale-105 hover:transition-transform cursor-pointer'>- About us</li>
-            <li className='font-syne text-4xl font-bold text-black hover:scale-105 hover:transition-transform cursor-pointer'>- Articles</li>
-            <li className='font-syne text-4xl font-bold text-black hover:scale-105 hover:transition-transform cursor-pointer'>- Contact us</li>
+          <ul className='flex flex-col gap-4 p-20 max-md:pl-6'>
+            <li className='font-syne text-4xl  font-bold text-black hover:scale-105 hover:transition-transform cursor-pointer'>Home</li>
+            <li className='font-syne text-4xl  font-bold text-black hover:scale-105 hover:transition-transform cursor-pointer'>About us</li>
+            <li className='font-syne text-4xl  font-bold text-black hover:scale-105 hover:transition-transform cursor-pointer'>Articles</li>
+            <li className='font-syne text-4xl  font-bold text-black hover:scale-105 hover:transition-transform cursor-pointer'>Contact us</li>
           </ul>
           </div>
       </div>

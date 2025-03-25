@@ -25,10 +25,10 @@ const ProductPage = () => {
 
   return (
     <div 
-    className='h-screen w-screen bg-cover bg-center flex flex-col'
+    className='h-dvh w-screen bg-cover bg-center flex flex-col'
     style={{ backgroundImage: `url(${Bg3})` }}
     >
-    <div className='h-1/4 w-screen flex items-center '>
+    <div className='h-1/5 w-screen flex items-center '>
       <Link to={'/products'}>
     <button
         class="bg-transparent ml-2 mr-auto mb-10 text-center w-48 rounded-2xl h-14 relative text-white cursor-pointer text-xl font-syne font-semibold group"

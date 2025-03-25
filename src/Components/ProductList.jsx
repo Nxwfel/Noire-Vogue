@@ -65,7 +65,7 @@ const ProductList = () => {
                   <p class="translate-x-2">Go Back</p>
                 </button>
                 </Link>
-          <div ref={Tops} id='Tops' className='grid grid-cols-4 ml-auto mr-auto mt-10 gap-10 max-w-screen min-h-screen opacity-100 transition-opacity duration-300'>
+          <div ref={Tops} id='Tops' className='grid grid-cols-4 max-md:grid-cols-1 ml-auto mr-auto mt-10 gap-10 max-w-screen min-h-screen opacity-100 transition-opacity duration-300'>
           <Link to={'/product'}>
           <div className='h-96 w-72 cursor-pointer bg-amber-50 rounded-xl shadow-lg items-center justify-center text-center hover:-translate-y-2 hover:transition-all'>
               <div className='relative ml-auto mr-auto mt-2 h-2/3 w-11/12 bg-transparent rounded-xl hover:first:rotate-25 hover:first:scale-130 hover:first:-translate-x-5 hover:first:-translate-y-20 hover:transition-transform'>
@@ -111,7 +111,7 @@ const ProductList = () => {
                   <p className='text-xl font-syne'>Price : 250$</p>
           </div>
           </div>
-          <div ref={Pants} id='Pants' className='hidden grid-cols-4 ml-auto mr-auto mt-10 gap-10 max-w-screen min-h-screen opacity-0 transition-opacity duration-300'>
+          <div ref={Pants} id='Pants' className='hidden grid-cols-4 max-md:grid-cols-1 ml-auto mr-auto mt-10 gap-10 max-w-screen min-h-screen opacity-0 transition-opacity duration-300'>
           <div className='h-96 w-72 cursor-pointer bg-amber-50 rounded-xl shadow-lg items-center justify-center text-center hover:-translate-y-2 hover:transition-all'>
               <div className='relative ml-auto mr-auto mt-2 h-2/3 w-11/12 bg-transparent rounded-xl hover:first:rotate-25 hover:first:scale-130 hover:first:-translate-x-5 hover:first:-translate-y-20 hover:transition-transform'>
                   <img src={Product} alt="Top" className="h-full w-full object-cover rounded-xl grayscale" loading='lazy' />
