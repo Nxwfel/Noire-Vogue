@@ -1,7 +1,7 @@
 import React from 'react'
 import {motion} from 'framer-motion'
-import Block1 from '../Assets/Block.jpg'
-import Block2 from '../Assets/Block2.jpg'
+import Block1 from '../Assets/Block.png'
+import Block2 from '../Assets/Block2.png'
 import '../Style/About.css'
 const About = () => {
   return (
@@ -19,10 +19,10 @@ const About = () => {
               
              <div className='flex justify-self-start mt-8 justify-center items-center gap-10'>
                <div className='h-42 w-30 max-md:w-20  max-md:h-32 rounded-xl overflow-hidden hover:scale-110 hover:transition-transform'>
-                 <img src={Block1} className='object-cover' loading='lazy' />
+                 <img src={Block1} className='object-cover h-42 grayscale' loading='lazy' />
                </div>
                <div className='h-42 w-30 max-md:w-20  max-md:h-32 rounded-xl overflow-hidden hover:scale-110 hover:transition-transform'>
-                 <img src={Block2} className='object-cover' loading='lazy' />
+                 <img src={Block2} className='object-cover h-42 grayscale' loading='lazy' />
                </div>
               </div>
               

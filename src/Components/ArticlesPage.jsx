@@ -1,6 +1,6 @@
 import React from 'react'
-import Pants from '../Assets/Pants.jpg';
-import Top from '../Assets/Top.jpg'; 
+import Pants from '../Assets/Pants.png';
+import Top from '../Assets/Top.png'; 
 import { Link } from 'react-router-dom';
 import {motion} from 'framer-motion';
 const ArticlesPage = () => {
@@ -17,7 +17,7 @@ const ArticlesPage = () => {
             transition={{duration: 2}}
             className='h-96 w-72 cursor-pointer bg-amber-50 rounded-xl shadow-lg items-center justify-center text-center hover:-translate-y-2 hover:transition-all'>
               <div className='relative ml-auto mr-auto pt-3 h-2/3 w-11/12 bg-transparent rounded-xl'>
-                  <img src={Top} alt="Top" className="h-full w-full object-cover rounded-xl grayscale" loading='lazy' />
+                  <img src={Top} alt="Top" className="h-full w-full object-cover object-center rounded-xl grayscale"/>
                 </div>  
                   <h1 className='text-4xl font-syne font-bold'>Tops</h1>
                   <p className='text-xl font-syne'>Good top can Make a whole dress</p>
@@ -29,7 +29,7 @@ const ArticlesPage = () => {
             whileInView={{opacity: 1, x: 0}}
             transition={{duration: 2}} className='h-96 w-72 cursor-pointer bg-amber-50 rounded-xl shadow-lg items-center justify-center text-center hover:-translate-y-2 hover:transition-all'>
                 <div className='relative ml-auto mr-auto pt-3 h-2/3 w-11/12 bg-transparent rounded-xl'>
-                  <img src={Pants} alt="Top" className="h-full w-full object-cover object-left rounded-xl grayscale " loading='lazy'/>
+                <img src={Pants} alt="Top" className="h-full w-full object-cover object-bottom rounded-xl grayscale"/>
                 </div>  
                 <h1 className='text-4xl font-syne font-bold'>Pants</h1>
                 <p className='text-xl font-syne'>Good Pair of Pants can make you avoid arrest</p>
