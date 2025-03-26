@@ -1,7 +1,7 @@
 import React from 'react'
 import {motion} from 'framer-motion'
-import Block1 from '../assets/Block.jpg'
-import Block2 from '../assets/Block2.jpg'
+import Block1 from '../Assets/Block.jpg'
+import Block2 from '../Assets/Block2.jpg'
 import '../Style/About.css'
 const About = () => {
   return (
