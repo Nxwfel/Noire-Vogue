@@ -22,13 +22,13 @@ function App() {
   }, [])
 
   return (
-    <>
+    <div className='h-fit w-screen overflow-hidden'>
     <HomePage />
     <About />
     <Break />
     <ArticlesPage />
     <Footer />
-    </>
+    </div>
   )
 }
 

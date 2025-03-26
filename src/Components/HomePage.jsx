@@ -3,6 +3,7 @@ import Background from '../Assets/background.mp4';
 import '../Style/HomePage.css';
 import { useScroll, useTransform, motion } from 'framer-motion';
 import { useRef } from 'react';
+import { Link } from 'react-scroll';
 
 const HomePage = () => {
 
@@ -23,7 +24,7 @@ const HomePage = () => {
   const y = useTransform(scrollYProgress, [0, 1], ["0vh", "150vh"])
 
   return (
-    <div className="h-screen w-screen overflow-hidden items-center justify-center">
+    <div id='Home' className="h-screen w-screen overflow-hidden items-center justify-center">
       <motion.div style={{y}} className='relative h-full'>
       <div className="h-3/4 w-1/2 max-md:w-[80vw] z-30 right-4 top-2 fixed overflow-hidden">
         
@@ -59,13 +60,13 @@ const HomePage = () => {
 
         {/* Menu */}
         <div className={`menu absolute justify-start items-center right-0 top-0 h-[60vh] max-md:w-[78vw] w-[37vw] z-40 bg-white rounded-4xl transition-all duration-300 ${
-            isMenuOpen ? 'opacity-100' : 'opacity-0'
+            isMenuOpen ? 'opacity-100' : 'opacity-0 hidden'
           }`}>
           <ul className='flex flex-col gap-4 p-20 max-md:pl-6'>
-            <li className='font-syne text-4xl  font-bold text-black hover:scale-105 hover:transition-transform cursor-pointer'>Home</li>
-            <li className='font-syne text-4xl  font-bold text-black hover:scale-105 hover:transition-transform cursor-pointer'>About us</li>
-            <li className='font-syne text-4xl  font-bold text-black hover:scale-105 hover:transition-transform cursor-pointer'>Articles</li>
-            <li className='font-syne text-4xl  font-bold text-black hover:scale-105 hover:transition-transform cursor-pointer'>Contact us</li>
+           <Link to='Home' smooth={true} duration={500}><li onClick={toggleMenu} className='font-syne text-4xl  font-bold text-black hover:scale-105 hover:transition-transform cursor-pointer'>Home</li></Link> 
+            <Link to='About' smooth={true} duration={500}><li onClick={toggleMenu} className='font-syne text-4xl  font-bold text-black hover:scale-105 hover:transition-transform cursor-pointer'>About us</li></Link>
+            <Link to='Articles' smooth={true} duration={500}><li onClick={toggleMenu} className='font-syne text-4xl  font-bold text-black hover:scale-105 hover:transition-transform cursor-pointer'>Articles</li></Link>
+            <Link to='Contact' smooth={true} duration={500}><li onClick={toggleMenu} className='font-syne text-4xl  font-bold text-black hover:scale-105 hover:transition-transform cursor-pointer'>Contact us</li></Link>
           </ul>
           </div>
       </div>
@@ -74,10 +75,14 @@ const HomePage = () => {
 
 
 
-      <div className="absolute bottom-0 left-3 text-start">
+      <motion.div
+      initial={{opacity: 0, x: -100}}
+      whileInView={{opacity: 1, x: 0}}
+      transition={{duration: 2}}
+      className="absolute bottom-0 left-3 text-start">
         <h1 className="font-syne text-6xl font-bold text-zinc-50">Noire Vauge</h1>
         <h3 className="font-french text-8xl font-normal text-lime-400">Elegance a porter</h3>
-      </div>
+      </motion.div>
       </motion.div>
     </div>
   );

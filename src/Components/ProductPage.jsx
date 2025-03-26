@@ -25,7 +25,7 @@ const ProductPage = () => {
 
   return (
     <div 
-    className='h-dvh w-screen bg-cover bg-center flex flex-col'
+    className='h-screen w-screen bg-cover bg-center flex flex-col'
     style={{ backgroundImage: `url(${Bg3})` }}
     >
     <div className='h-1/5 w-screen flex items-center '>
@@ -57,13 +57,13 @@ const ProductPage = () => {
       </button>
       </Link>
       </div>
-     <div className='h-2/3 w-2/3 relative ml-auto mr-auto rounded-xl border-1 border-stone-400 bg-white/20 flex items-center justify-center text-justify'>
-      <div id='Product-Pic' className='relative mt-auto mb-auto  mr-auto -ml-30 rotate-20 h-2/3 w-1/2'>
-      <img src={Product} alt=""  className='-mt-40'/>
+     <div className='h-2/3 w-2/3 max-md:h-fit relative ml-auto mr-auto rounded-xl border-1 border-stone-400 bg-white/20 flex max-md:flex-col items-center justify-center text-justify'>
+      <div id='Product-Pic' className='relative mt-auto mb-auto  mr-auto -ml-30 max-md:ml-auto rotate-20 h-2/3 w-1/2'>
+      <img src={Product} alt=""  className='-mt-40 max-md:-mt-8'/>
       </div>
-      <div id='Product-infos'className='flex flex-col w-1/2 h-full'> 
-        <div id='Product-name' className='h-1/3 w-full mt-10'>
-        <h1 className='font-syne font-bold text-4xl'>XVII - Full-White</h1>
+      <div id='Product-infos'className='flex flex-col w-1/2 h-full max-md:items-center max-md:justify-center max-md:text-center'> 
+        <div id='Product-name' className='h-1/3 w-full mt-10 max-md:mt-3'>
+        <h1 className='font-syne font-bold text-4xl max-md:text-xl'>XVII - Full-White</h1>
         <p className='font-syne font-semibold '>Available: 30 pieces</p>
         </div>
         <div id='size'>
@@ -87,8 +87,8 @@ const ProductPage = () => {
               <span class="selection"></span>
             </div>
         </div>
-        <div id='Product-quantity' className='h-1/3 w-full mt-10'>
-           <div className='h-10 w-30 bg-white rounded-4xl flex items-center justify-center'>  
+        <div id='Product-quantity' className='h-1/3 w-full mt-10 '>
+           <div className='h-10 w-30 bg-white rounded-4xl flex items-center justify-center max-md:justify-self-center'>  
             <button onClick={Quantity_substraction} className='h-10 w-10 bg-black text-white rounded-l-4xl justify-start items-start mr-auto '>-</button>
             <h1 className='font-syne font-bold text-green-600'>{quantity}</h1>
             <button onClick={Quantity_addition} className='h-10 w-10 bg-black text-white rounded-r-4xl justify-end items-end ml-auto -mr-0.5'>+</button>

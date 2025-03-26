@@ -2,7 +2,7 @@ import React from 'react'
 import '../Style/Footer.css'
 const Footer = () => {
   return (
-    <div className='border-t-1 border-neutral-500 h-96 w-screen bg-black flex'>
+    <div id='Contact' className='border-t-1 border-neutral-500 h-96 w-screen bg-black flex'>
         
         <div className=' flex flex-col justify-center'>
           <h1 className=' font-french font-extralight text-6xl mt-4 ml-6 text-lime-400'>Contact</h1>
@@ -60,7 +60,7 @@ const Footer = () => {
             </div>
             </div>
             </div>
-            <div className='flex flex-col justify-center items-center gap-4'>
+            <div className='flex flex-col justify-center items-center gap-4 max-lg:hidden'>
               <h1 className='text-4xl text-white font-syne font-bold'>Speak up BI***</h1>
             <div class="input-container">
                 <input required="" id="input" type="text" />
