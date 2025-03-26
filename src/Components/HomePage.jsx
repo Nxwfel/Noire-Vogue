@@ -81,7 +81,7 @@ const HomePage = () => {
       transition={{duration: 2}}
       className="absolute bottom-0 left-3 text-start">
         <h1 className="font-syne text-6xl font-bold text-zinc-50">Noire Vauge</h1>
-        <h3 className="font-french text-8xl font-normal text-lime-400">Elegance a porter</h3>
+        <h3 className="font-french text-8xl max-sm:text-6xl font-normal text-lime-400">Elegance a porter</h3>
       </motion.div>
       </motion.div>
     </div>
