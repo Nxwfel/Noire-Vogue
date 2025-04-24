@@ -10,7 +10,7 @@ const ArticlesPage = () => {
              <h1 className='font-french font-extralight text-8xl  mb-10 text-lime-400'>We <span className='font-syne font-bold text-white'>Provide</span> </h1>
             
             <div className="relative gap-20 h-full w-full pb-10 flex justify-center items-center z-30 max-sm:flex-col max-sm:gap-4">
-             <Link to='/products'>
+             <Link to={'/products'}>
             <motion.div
             initial={{opacity: 0, x: -100}}
             whileInView={{opacity: 1, x: 0}}

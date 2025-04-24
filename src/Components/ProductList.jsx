@@ -1,10 +1,15 @@
-import React , {useRef} from 'react'
+import React , {useRef, useEffect} from 'react'
 import Bg3 from '../Assets/Bg3.png'
 import Product from '../Assets/Product2.png'
 import { Link } from 'react-router-dom'
 const ProductList = () => {
-  const Pants = useRef()
-  const Tops = useRef()
+  const Pants = useRef();
+  const Tops = useRef();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
 
   const toggleDisplay = (showRef, hideRef) => {
     if (showRef.current && hideRef.current) {
@@ -21,6 +26,10 @@ const ProductList = () => {
 
   return (
     <div 
+    initial={{opacity: 0}}
+    animate={{opacity: 1}}
+    exit={{opacity: 0}}
+    transition={{duration: 0.5}}
     className='h-fit w-screen bg-center bg-cover flex flex-col'
     style={{ backgroundImage: `url(${Bg3})` }}	
     >
