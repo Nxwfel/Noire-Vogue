@@ -1,6 +1,7 @@
 import React , {useRef, useEffect} from 'react'
 import Bg3 from '../Assets/Bg3.png'
 import Product from '../Assets/Product2.png'
+import Product2 from '../Assets/Top.jpg';
 import { Link } from 'react-router-dom'
 const ProductList = () => {
   const Pants = useRef();
@@ -77,10 +78,10 @@ const ProductList = () => {
           <div ref={Tops} id='Tops' className='grid grid-cols-4 max-md:grid-cols-1 ml-auto mr-auto mt-10 gap-10 max-w-screen min-h-screen opacity-100 transition-opacity duration-300'>
           <Link to={'/product'}>
           <div className='h-96 w-72 cursor-pointer bg-amber-50 rounded-xl shadow-lg items-center justify-center text-center hover:-translate-y-2 hover:transition-all'>
-              <div className='relative ml-auto mr-auto mt-2 h-2/3 w-11/12 bg-transparent rounded-xl hover:first:rotate-25 hover:first:scale-130 hover:first:-translate-x-5 hover:first:-translate-y-20 hover:transition-transform'>
-                  <img src={Product} alt="Top" className="h-full w-full object-cover rounded-xl grayscale" loading='lazy' />
+              <div className='relative ml-auto mr-auto  h-2/3 w-11/12 bg-transparent rounded-xl hover:first:rotate-25 hover:first:scale-130 hover:first:-translate-x-5 hover:first:-translate-y-20 hover:transition-transform'>
+                  <img src={Product2} alt="Top" className="h-full w-full object-cover rounded-xl grayscale" loading='lazy' />
                 </div>  
-                  <h1 className='text-4xl font-syne font-bold'>XVII</h1>
+                  <h1 className='text-4xl font-syne font-bold'>XVI</h1>
                   <p className='text-xl font-syne'>Price : 250$</p>
           </div>
           </Link>

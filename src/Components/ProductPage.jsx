@@ -1,25 +1,25 @@
 import React , {useState} from 'react'
 import Bg3 from '../Assets/Bg3.png';
-import Product from '../Assets/Product2.png';
+import Product from '../Assets/Top.jpg';
 import '../Style/ProductPage.css';
 import { Link } from 'react-router-dom';
 const ProductPage = () => {
        const [quantity, setQuantity] = useState(1)
-       const [price, setPrice] = useState(250)
+       const [price, setPrice] = useState(50)
        const Quantity_addition = () =>{
           setQuantity(quantity+1)
-          setPrice(price+250)
+          setPrice(price+50)
        } 
         const Quantity_substraction = () =>{
             setQuantity(quantity-1)
-            setPrice(price-250)
+            setPrice(price-50)
             if(quantity === 1){
                 setQuantity(1)
-                setPrice(250)
+                setPrice(50)
             }
             else if(price <= 0){
               setQuantity(1)
-                setPrice(250)
+                setPrice(50)
             }
         }
 
@@ -58,12 +58,12 @@ const ProductPage = () => {
       </Link>
       </div>
      <div className='h-2/3 w-2/3 max-md:h-fit relative ml-auto mr-auto rounded-xl border-1 border-stone-400 bg-white/20 flex max-md:flex-col items-center justify-center text-justify'>
-      <div id='Product-Pic' className='relative mt-auto mb-auto  mr-auto -ml-30 max-md:ml-auto rotate-20 h-2/3 w-1/2'>
-      <img src={Product} alt=""  className='-mt-40 max-md:-mt-8'/>
+      <div id='Product-Pic' className='relative mr-auto  max-md:ml-auto h-2/3 w-1/2'>
+      <img src={Product} alt=""  className='h-100 max-md:-mt-8 -mt-10'/>
       </div>
       <div id='Product-infos'className='flex flex-col w-1/2 h-full max-md:items-center max-md:justify-center max-md:text-center'> 
         <div id='Product-name' className='h-1/3 w-full mt-10 max-md:mt-3'>
-        <h1 className='font-syne font-bold text-4xl max-md:text-xl'>XVII - Full-White</h1>
+        <h1 className='font-syne font-bold text-4xl max-md:text-xl'>XVI - Full-White</h1>
         <p className='font-syne font-semibold '>Available: 30 pieces</p>
         </div>
         <div id='size'>
