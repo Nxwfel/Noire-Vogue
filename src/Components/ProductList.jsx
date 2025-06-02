@@ -3,6 +3,7 @@ import Bg3 from '../Assets/Bg3.png'
 import Product from '../Assets/Product2.png'
 import Product2 from '../Assets/Top.jpg';
 import { Link } from 'react-router-dom'
+import Cart from '../Assets/shopping-cart.png';
 const ProductList = () => {
   const Pants = useRef();
   const Tops = useRef();
@@ -34,6 +35,11 @@ const ProductList = () => {
     className='h-fit w-screen bg-center bg-cover flex flex-col'
     style={{ backgroundImage: `url(${Bg3})` }}	
     >
+      <div className='h-10 w-10 rounded-full bg-white/15 border-white border-1 absolute justify-center top-7 right-5'>
+          <button className='h-full w-full flex items-center justify-center'> 
+            <img src={Cart} alt="" className='h-6 ml-1.5 mr-auto'/>
+          </button>
+      </div>
         <h1 className='font-syne font-bold text-sm text-black ml-auto mr-auto mt-4 uppercase'>noire-vauge</h1>
         <div className='flex ml-auto mr-auto mt-10 gap-10'>
           <div className='h-12 w-20 pb-2 bg-transparent hover:border-2 hover:border-transparent hover:border-b-white'>

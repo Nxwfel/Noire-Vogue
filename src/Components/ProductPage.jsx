@@ -3,6 +3,7 @@ import Bg3 from '../Assets/Bg3.png';
 import Product from '../Assets/Top.jpg';
 import '../Style/ProductPage.css';
 import { Link } from 'react-router-dom';
+import Cart from '../Assets/shopping-cart.png';
 const ProductPage = () => {
        const [quantity, setQuantity] = useState(1)
        const [price, setPrice] = useState(50)
@@ -28,6 +29,11 @@ const ProductPage = () => {
     className='h-screen w-screen bg-cover bg-center flex flex-col'
     style={{ backgroundImage: `url(${Bg3})` }}
     >
+      <div className='h-10 w-10 rounded-full bg-white/15 border-white border-1 absolute justify-center top-7 right-5'>
+          <button className='h-full w-full flex items-center justify-center'> 
+            <img src={Cart} alt="" className='h-6 ml-1.5 mr-auto'/>
+          </button>
+      </div>
     <div className='h-1/5 w-screen flex items-center '>
       <Link to={'/products'}>
     <button
@@ -94,7 +100,8 @@ const ProductPage = () => {
             <button onClick={Quantity_addition} className='h-10 w-10 bg-black text-white rounded-r-4xl justify-end items-end ml-auto -mr-0.5'>+</button>
            </div>
         </div>
-        <div id='Product-price' className='h-1/3 w-full'><h1 id='Price' className='font-syne text-2xl font-bold text-black'>Price: <span className='text-white'>{price} $ </span> </h1></div>
+        <div id='Product-price' className='h-1/3 w-full '><h1 id='Price' className='font-syne text-2xl font-bold text-black'>Price: <span className='text-white'>{price} $ </span> </h1></div>
+        <div className='flex gap-3'>
         <button
             class="cursor-pointer group relative bg-white hover:bg-zinc-300 text-black font-semibold text-sm px-2 py-3 rounded-full transition-all duration-200 ease-in-out shadow hover:shadow-lg w-40 h-12 mb-10"
           >
@@ -127,6 +134,39 @@ const ProductPage = () => {
               </svg>
             </div>
           </button>
+          <button
+            class="cursor-pointer group relative bg-white hover:bg-zinc-300 text-black font-semibold text-sm px-2 py-3 rounded-full transition-all duration-200 ease-in-out shadow hover:shadow-lg w-40 h-12 mb-10"
+          >
+            <div class="relative flex items-center justify-center gap-2">
+              <span class="relative inline-block overflow-hidden">
+                <span
+                  class="block transition-transform duration-300 group-hover:-translate-y-full"
+                >
+                  Add to Cart
+                </span>
+                <span
+                  class="absolute inset-0 transition-transform duration-300 translate-y-full group-hover:translate-y-0"
+                >
+                  Added
+                </span>
+              </span>
+
+              <svg
+                class="w-4 h-4 transition-transform duration-200 group-hover:rotate-45"
+                viewBox="0 0 24 24"
+              >
+                <circle fill="currentColor" r="11" cy="12" cx="12"></circle>
+                <path
+                  stroke-linejoin="round"
+                  stroke-linecap="round"
+                  stroke-width="2"
+                  stroke="white"
+                  d="M7.5 16.5L16.5 7.5M16.5 7.5H10.5M16.5 7.5V13.5"
+                ></path>
+              </svg>
+            </div>
+          </button>
+          </div>
       </div>
      </div>
     </div>
