@@ -1,13 +1,13 @@
 import React from 'react'
 import Bg from '../Assets/Bg3.png'
-import {Link} from "react-router";
+import {Link} from "react-router-dom";
 const ClientSignin = () => {
   return (
     <div className='flex flex-col h-screen w-screen items-center justify-center '
         style={{ backgroundImage: `url(${Bg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
     >
       <Link to={"/"} 
-      className='mr-auto'>
+        className='mr-auto'>
         <button
                   class="bg-transparent mr-auto ml-2 mb-10 text-center w-48 rounded-2xl h-14 relative text-white cursor-pointer text-xl font-syne font-semibold group"
                   type="button"
@@ -44,7 +44,7 @@ const ClientSignin = () => {
         Sign in to your account
       </h2>
       <p class="mt-2 text-center text-sm text-gray-600">
-        Don't have an account? Create a free account
+        Don't have an account? <Link to={"/signup"} className='text-black'>Create a free account</Link>
       </p>
       <form class="mt-8" method="POST" action="#">
         <div class="space-y-5">

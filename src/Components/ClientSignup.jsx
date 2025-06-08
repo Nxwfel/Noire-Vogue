@@ -1,12 +1,13 @@
 import React from 'react'
 import Bg from '../assets/Bg3.png';
-import {Link} from "react-router";
+import {Link} from "react-router-dom";
 const ClientSignup = () => {
   return (
     <div className='flex flex-col h-fit w-screen items-center justify-center '
             style={{ backgroundImage: `url(${Bg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
         >
-          <Link to={"/"}>
+          <Link to={"/"} 
+          className='mr-auto'>
             <button
                       class="bg-transparent mr-auto ml-2 mb-10 text-center w-48 rounded-2xl h-14 relative text-white cursor-pointer text-xl font-syne font-semibold group"
                       type="button"
@@ -33,9 +34,9 @@ const ClientSignup = () => {
                       <p class="translate-x-2">Go Back</p>
                     </button>
           </Link>
-    <section className='w-screen  items-center justify-center'>
+    <section className='w-screen items-center justify-center pb-10'>
       <div
-        class="flex bg-white w-1/3 ml-auto mr-auto rounded-2xl items-center justify-center px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-8"
+        class="flex bg-white w-fit ml-auto mr-auto rounded-2xl items-center justify-center px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-8"
       >
         <div class="xl:mx-auto xl:w-full shadow-md p-4 xl:max-w-sm 2xl:max-w-md">
           <div class="mb-2 flex justify-center"></div>
