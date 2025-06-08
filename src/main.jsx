@@ -5,12 +5,19 @@ import App from './Components/App.jsx'
 import ProductList from './Components/ProductList.jsx'
 import ProductPage from './Components/ProductPage.jsx'
 import NotFound from './Components/NotFound.jsx'
+import Order from './Components/Order.jsx'
 import './main.css'
+import ClientSignup from './Components/ClientSignup.jsx'
+import ClientSignin from './Components/ClientSignin.jsx'
+
 
 const router = createBrowserRouter([
   {path:'/',element:<App />},
   {path:'/products',element:<ProductList />},
   {path:'/product',element:<ProductPage />},
+  {path:'/order',element:<Order />},
+  {path:'/signin',element:<ClientSignin />},
+  {path:'/signup',element:<ClientSignup />},
   {path:'*',element:<NotFound />},
 
 ])

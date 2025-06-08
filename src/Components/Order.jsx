@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import Bill from '../Assets/bill-icon.png';
 import History from '../Assets/history-icon.png';
-import Bg from '../Assets/Admin-Bg.png'
+import Bg from '../Assets/Bg3.png'
 
 const Order = () => {
   const billRef = useRef(null);
@@ -26,19 +26,19 @@ const Order = () => {
         style={{ backgroundImage: `url(${Bg})` }}	
     >
       <div className='flex flex-col h-screen w-1/5 items-center justify-center'>
-        <div className=' w-full h-[10%] mb-auto shadow-2xl border-b-1'></div>
-        <div className='flex flex-col h-[90%] w-full bg-white/10 items-center justify-center border-r-1'>
-          <h1 className='mr-auto ml-[2vw] font-syne font-bold text-6xl'>Name</h1>
-          <h1 className='mr-auto ml-[2.3vw] font-syne font-thin text-xl'>Id: 001010</h1>
+        <div className=' w-full h-[10%] mb-auto shadow-2xl bg-white/10'></div>
+        <div className='flex flex-col h-[90%] w-full bg-white/10 items-center justify-center '>
+          <h1 className='mr-auto ml-[2vw] font-syne font-bold text-6xl text-white'>Name</h1>
+          <h1 className='mr-auto ml-[2.3vw] font-syne font-thin text-xl text-white'>Id: 001010</h1>
         </div>
       </div>
 
-      <div className='flex flex-col h-screen w-4/5'>
-        <div className='w-full shadow-2xl h-[10%] border-b-1 justify-center items-center text-start'>
-          <h1 className='mt-auto mb-auto font-syne font-bold text-6xl'>Order Page</h1>
+      <div className='flex flex-col h-screen w-4/5 '>
+        <div className='w-full shadow-2xl h-[10%] bg-white/10 justify-center items-center text-start'>
+          <h1 className='mt-auto mb-auto font-syne font-bold text-6xl text-white'>Order Page</h1>
         </div>
 
-        <div className='w-1/8 h-[7%] bg-white/10 rounded-xl border-1 mb-auto mt-6 ml-3 flex gap-10 justify-center items-center '>
+        <div className='w-1/8 h-[7%] bg-white/10 rounded-xl  mb-auto mt-6 ml-3 flex gap-10 justify-center items-center '>
           <button
             id='BillB'
             className='cursor-pointer w-fit h-fit flex flex-col justify-center items-center'
@@ -58,39 +58,39 @@ const Order = () => {
         <div
           id='Bill'
           ref={billRef}
-          className='hidden w-[98%] h-[76%] bg-white/10 ml-3 mb-3 border-1 flex shadow-2xl flex-col'
+          className='hidden w-[98%] h-[76%] bg-white/10 rounded-xl ml-3 mb-3 flex shadow-2xl flex-col'
         >
-          <div className='h-[12vh] w-full border-b-1'>
-            <h1 className='font-syne font-bold text-7xl'>Product-List</h1>
+          <div className='h-[12vh] w-full '>
+            <h1 className='font-syne font-bold text-7xl text-white'>Product-List</h1>
           </div>
           <div className=''>
-            <div id='ids' className='w-full h-fit p-3 flex flex-row border-b-1'>
-              <p className='font-syne font-thin text-2xl flex-1 text-center'>Code Product</p>
-              <p className='font-syne font-thin text-2xl flex-1 text-center'>Product</p>
-              <p className='font-syne font-thin text-2xl flex-1 text-center'>Price/Unit</p>
-              <p className='font-syne font-thin text-2xl flex-1 text-center'>Final Price</p>
+            <div id='ids' className='w-full h-fit p-3 flex flex-row '>
+              <p className='font-syne font-thin text-2xl flex-1 text-center  text-white'>Code Product</p>
+              <p className='font-syne font-thin text-2xl flex-1 text-center  text-white'>Product</p>
+              <p className='font-syne font-thin text-2xl flex-1 text-center  text-white'>Price/Unit</p>
+              <p className='font-syne font-thin text-2xl flex-1 text-center  text-white'>Final Price</p>
             </div>
           </div>
           <div id='info' className=''>
-            <div className='w-full h-fit p-3 flex flex-row border-b-1'>
-              <p className='font-syne font-thin text-2xl flex-1 text-center'>001</p>
-              <p className='font-syne font-thin text-2xl flex-1 text-center'>Product A</p>
-              <p className='font-syne font-thin text-2xl flex-1 text-center'>10.00</p>
-              <p className='font-syne font-thin text-2xl flex-1 text-center'>100.00</p>
+            <div className='w-full h-fit p-3 flex flex-row '>
+              <p className='font-syne font-thin text-2xl flex-1 text-center  text-white'>001</p>
+              <p className='font-syne font-thin text-2xl flex-1 text-center  text-white'>Product A</p>
+              <p className='font-syne font-thin text-2xl flex-1 text-center  text-white'>10.00</p>
+              <p className='font-syne font-thin text-2xl flex-1 text-center  text-white'>100.00</p>
             </div>
-            <div className='w-full h-fit p-3 flex flex-row border-b-1'>
-              <p className='font-syne font-thin text-2xl flex-1 text-center'>002</p>
-              <p className='font-syne font-thin text-2xl flex-1 text-center'>Product B</p>
-              <p className='font-syne font-thin text-2xl flex-1 text-center'>20.00</p>
-              <p className='font-syne font-thin text-2xl flex-1 text-center'>200.00</p>
+            <div className='w-full h-fit p-3 flex flex-row '>
+              <p className='font-syne font-thin text-2xl flex-1 text-center  text-white'>002</p>
+              <p className='font-syne font-thin text-2xl flex-1 text-center  text-white'>Product B</p>
+              <p className='font-syne font-thin text-2xl flex-1 text-center  text-white'>20.00</p>
+              <p className='font-syne font-thin text-2xl flex-1 text-center  text-white'>200.00</p>
             </div>
           </div>
-          <div className='flex mt-auto h-fit w-full p-3 border-t-1'>
+          <div className='flex mt-auto h-fit w-full p-3 '>
             <div className='mr-auto'>
-              <h1 className='uppercase font-syne font-bold text-4xl'>total</h1>
+              <h1 className='uppercase font-syne font-bold text-4xl text-white'>total</h1>
             </div>
             <div className='ml-auto'>
-              <h1 className='uppercase font-syne font-bold text-4xl'>00.00 $</h1>
+              <h1 className='uppercase font-syne font-bold text-4xl text-white'>00.00 $</h1>
             </div>
             <div></div>
           </div>
@@ -99,18 +99,18 @@ const Order = () => {
         <div
           id='Details'
           ref={detailsRef}
-          className='w-[98%] h-[76%] ml-3 mb-3 border-1 bg-white/10'
+          className='w-[98%] h-[76%] ml-3 mb-3  bg-white/10 rounded-xl'
         >
-          <div className='h-[12vh] w-full border-b-1'>
-            <h1 className='font-syne font-bold text-7xl'>Details</h1>
+          <div className='h-[12vh] w-full '>
+            <h1 className='font-syne font-bold text-7xl text-white'>Details</h1>
           </div>
-          <div className='w-full h-fit p-3 flex flex-row border-b-1'>
-            <p className='font-syne font-thin text-2xl flex-1 text-center'>Trans Code</p>
-            <p className='font-syne font-thin text-2xl flex-1 text-center'>Product Qnt</p>
-            <p className='font-syne font-thin text-2xl flex-1 text-center'>Date</p>
-            <p className='font-syne font-thin text-2xl flex-1 text-center'>Location</p>
-            <p className='font-syne font-thin text-2xl flex-1 text-center'>Phase</p>
-            <p className='font-syne font-thin text-2xl flex-1 text-center'>Paid</p>
+          <div className='w-full h-fit p-3 flex flex-row '>
+            <p className='font-syne font-thin text-2xl flex-1 text-center  text-white'>Trans Code</p>
+            <p className='font-syne font-thin text-2xl flex-1 text-center text-white  '>Product Qnt</p>
+            <p className='font-syne font-thin text-2xl flex-1 text-center text-white '>Date</p>
+            <p className='font-syne font-thin text-2xl flex-1 text-center text-white '>Location</p>
+            <p className='font-syne font-thin text-2xl flex-1 text-center text-white '>Phase</p>
+            <p className='font-syne font-thin text-2xl flex-1 text-center text-white '>Paid</p>
           </div>
         </div>
       </div>
