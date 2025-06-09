@@ -28,7 +28,7 @@ const Admin = () => {
     <div className='h-fit w-screen flex'
       style={{ backgroundImage: `url(${Bg3})` }}
     >
-      <div className='w-1/6 h-screen bg-white/10 shadow-2xl shadow-black '>
+      <div className='w-1/6 h-screen bg-white/10 shadow-2xl shadow-black sticky'>
         <h2 className='text-2xl font-bold font-syne text-white text-center'>Noire-vauge</h2>
         <ul className='flex flex-col mt-[30vh] w-full h-full text-center'>
           <li

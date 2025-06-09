@@ -7,6 +7,7 @@ const About = lazy (() => import ('./About.jsx')) ;
 const Footer = lazy(() => import ('./Footer.jsx'));
 const Break = lazy(() => import ('././Break.jsx'));
 const Admin = lazy(() => import ('./Admin.jsx'));
+const Order = lazy(() => import ('./Order.jsx'));
 import Lenis from 'lenis';
 function App() {
  
@@ -28,6 +29,7 @@ function App() {
     <ArticlesPage />
     <Footer />
     <Admin />
+    <Order />
     </div>
   )
 }
