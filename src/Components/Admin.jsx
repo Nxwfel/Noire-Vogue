@@ -25,7 +25,7 @@ const Admin = () => {
   };
 
   return (
-    <div className='h-fit w-screen flex'
+    <div className='h-fit w-screen flex overflow-hidden'
       style={{ backgroundImage: `url(${Bg3})` }}
     >
       <div className='w-1/6 h-screen max-lg:h-auto  bg-white/10 shadow-2xl shadow-black sticky'>

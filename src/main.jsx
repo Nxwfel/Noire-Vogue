@@ -6,10 +6,10 @@ import ProductList from './Components/ProductList.jsx'
 import ProductPage from './Components/ProductPage.jsx'
 import NotFound from './Components/NotFound.jsx'
 import Order from './Components/Order.jsx'
-import './main.css'
+import Admin from './Components/Admin.jsx'
 import ClientSignup from './Components/ClientSignup.jsx'
 import ClientSignin from './Components/ClientSignin.jsx'
-
+import './main.css'
 
 const router = createBrowserRouter([
   {path:'/',element:<App />},
@@ -18,6 +18,7 @@ const router = createBrowserRouter([
   {path:'/order',element:<Order />},
   {path:'/signin',element:<ClientSignin />},
   {path:'/signup',element:<ClientSignup />},
+  {path:'/admin',element:<Admin />},
   {path:'*',element:<NotFound />},
 
 ])
