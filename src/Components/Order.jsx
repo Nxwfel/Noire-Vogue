@@ -38,10 +38,10 @@ const Order = () => {
           <h1 className='mt-auto mb-auto font-syne font-bold text-6xl max-lg:text-4xl text-white'>Order Page</h1>
         </div>
 
-        <div className='w-1/8 max-lg:w-2/8 h-[7%] bg-white/10 rounded-xl mb-auto mt-6 ml-3 flex gap-10 justify-center items-center '>
+        <div className='w-1/8 max-lg:w-2/8 max-lg:ml-10 h-[7%] bg-white/10 rounded-xl mb-auto mt-6 ml-3 flex gap-10 justify-center items-center '>
           <button
             id='BillB'
-            className='cursor-pointer w-fit h-fit flex flex-col justify-center items-center'
+            className='cursor-pointer max-lg:z-20 w-fit h-fit flex flex-col justify-center items-center'
             onClick={showBill}
           >
             <img src={Bill} alt="" className='h-8 ml-auto mr-auto'/>

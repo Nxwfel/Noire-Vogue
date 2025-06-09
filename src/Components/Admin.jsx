@@ -28,24 +28,24 @@ const Admin = () => {
     <div className='h-fit w-screen flex'
       style={{ backgroundImage: `url(${Bg3})` }}
     >
-      <div className='w-1/6 h-screen bg-white/10 shadow-2xl shadow-black sticky'>
-        <h2 className='text-2xl font-bold font-syne text-white text-center'>Noire-vauge</h2>
+      <div className='w-1/6 h-screen max-lg:h-auto  bg-white/10 shadow-2xl shadow-black sticky'>
+        <h2 className='text-2xl max-lg:text-xl font-bold font-syne text-white text-center'>Noire-vauge</h2>
         <ul className='flex flex-col mt-[30vh] w-full h-full text-center'>
           <li
             id='DashboardB'
             className='ml-5 mb-5 flex text-center gap-4 hover:scale-110 hover:transition-all cursor-pointer'
             onClick={showDashboard}
           >
-            <img src={Dashboard} alt="" className='h-8' />
-            <span className='text-green-500 font-bold font-syne hover:transition-all hover:text-white'>Dashboard</span>
+            <img src={Dashboard} alt="" className='h-8' onClick={showDashboard} />
+            <span className='text-green-500 font-bold font-syne hover:transition-all hover:text-white max-lg:hidden'>Dashboard</span>
           </li>
           <li
             id='SettingsB'
             className='ml-5 mb-5 flex text-center gap-4 hover:scale-110 hover:transition-all cursor-pointer'
             onClick={showSettings}
           >
-            <img src={Settings} alt="" className='h-8' />
-            <span className='text-green-500 font-bold font-syne hover:transition-all hover:text-white'>Settings</span>
+            <img src={Settings} alt="" className='h-8' onClick={showDashboard} />
+            <span className='text-green-500 font-bold font-syne hover:transition-all hover:text-white max-lg:hidden'>Settings</span>
           </li>
           <li className='mt-auto mb-auto'>
             <a href='#' className='text-red-500 font-bold font-syne '>Logout</a>
@@ -59,24 +59,24 @@ const Admin = () => {
         ref={dashboardRef}
         className='h-fit w-5/6 flex flex-col'
       >
-        <div className='w-5/6 h-[35vh] flex flex-col gap-4 mr-auto'>
+        <div className='w-5/6 h-[35vh] max-lg:h-fit flex flex-col gap-4 mr-auto'>
           <h1 className='text-4xl font-bold font-syne text-white mt-10'>Admin Dashboard</h1>
-          <div className='w-full h-full ml-10 flex gap-20 items-center justify-center'>
-            <div className='h-full w-1/3 ml-auto mr-auto bg-green-800 rounded-xl flex flex-col items-center justify-center'>
+          <div className='w-full h-full ml-10 flex max-lg:flex-col gap-20 items-center justify-center'>
+            <div className='h-full w-1/3 max-lg:w-2/3 ml-auto mr-auto bg-green-800 rounded-xl flex flex-col items-center justify-center'>
               <div className='flex gap-5 mb-auto mt-5'>
                 <img src={Orders} alt="" className='h-8' />
                 <h1 className='font-syne text-xl font-bold text-white'>Today's Orders</h1>
               </div>
               <h1 className='text-white font-bold font-syne text-4xl mb-auto mr-auto ml-5'>00</h1>
             </div>
-            <div className='h-full w-1/3 ml-auto mr-auto bg-red-700 rounded-xl flex flex-col items-center justify-center'>
+            <div className='h-full w-1/3 max-lg:w-2/3 ml-auto mr-auto bg-red-700 rounded-xl flex flex-col items-center justify-center'>
               <div className='flex gap-8 mb-auto mt-5'>
                 <img src={Income} alt="" className='h-8' />
                 <h1 className='font-syne text-xl font-bold text-white'>Month's income</h1>
               </div>
-              <h1 className='text-white font-bold font-syne text-4xl mb-auto mr-auto ml-5'>00</h1>
+              <h1 className='text-white font-bold font-syne text-4xl mb-auto mr-auto ml-5'>00.00$</h1>
             </div>
-            <div className='h-full w-1/3 ml-auto mr-auto bg-yellow-700 rounded-xl flex flex-col items-center justify-center'>
+            <div className='h-full w-1/3 max-lg:w-2/3 ml-auto mr-auto bg-yellow-700 rounded-xl flex flex-col items-center justify-center'>
               <div className='flex gap-5 mb-auto mt-5'>
                 <img src={Delivered} alt="" className='h-8' />
                 <h1 className='font-syne text-xl font-bold text-white'>Delivered Orders</h1>
@@ -85,8 +85,8 @@ const Admin = () => {
             </div>
           </div>
         </div>
-        <h1 className='text-7xl font-bold font-syne text-white mt-20 ml-10'>Clients</h1>
-        <div className='w-[94%] h-[80%] bg-white/15 shadow-2xl shadow-black ml-13 rounded-xl'>
+        <h1 className='text-7xl  font-bold font-syne text-white mt-20 ml-10 max-lg:ml-3'>Clients</h1>
+        <div className='w-[94%] h-[80%] bg-white/15 shadow-2xl shadow-black ml-13 max-lg:ml-4 rounded-xl'>
           <table className='w-full h-full text-white'>
             <thead>
               <tr className='text-center'>
