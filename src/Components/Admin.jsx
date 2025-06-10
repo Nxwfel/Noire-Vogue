@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import Bg3 from '../Assets/Bg3.png'
-import Dashboard from '../Assets/Dashboard.png'
+import Dashboard from '../Assets/dashboard.png'
 import Settings from '../Assets/Settings.png'
 import Orders from '../Assets/Clients.png'
 import Income from '../Assets/cash.png'
