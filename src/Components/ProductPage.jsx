@@ -4,6 +4,7 @@ import Product from '../Assets/Top.jpg';
 import '../Style/ProductPage.css';
 import { Link } from 'react-router-dom';
 import Cart from '../Assets/shopping-cart.png';
+import Close from '../Assets/close.png';
 const ProductPage = () => {
        const [quantity, setQuantity] = useState(1)
        const [price, setPrice] = useState(50)
@@ -24,13 +25,22 @@ const ProductPage = () => {
             }
         }
 
+      const [formVisible, setFormVisible] = useState(false);
+      const toggleForm = () => {
+        setFormVisible(!formVisible);
+        const formulaire = document.getElementById('formulaire');
+        if (formulaire) {
+          formulaire.classList.toggle('hidden');
+        }
+      };
+
   return (
     <div 
-    className='h-screen w-screen bg-cover bg-center flex flex-col'
+    className='h-screen max-lg:h-fit w-screen bg-cover bg-center flex flex-col'
     style={{ backgroundImage: `url(${Bg3})` }}
     >
       <div className='h-10 w-10 rounded-full bg-white/15 border-white border-1 absolute justify-center top-7 right-5'>
-          <button className='h-full w-full flex items-center justify-center'> 
+          <button className='h-full w-full flex items-center justify-center '> 
             <img src={Cart} alt="" className='h-6 ml-1.5 mr-auto'/>
           </button>
       </div>
@@ -63,14 +73,14 @@ const ProductPage = () => {
       </button>
       </Link>
       </div>
-     <div className='h-2/3 w-2/3 max-md:h-fit relative ml-auto mr-auto rounded-xl border-1 border-stone-400 bg-white/20 flex max-md:flex-col items-center justify-center text-justify'>
+     <div className='h-2/3 w-2/3 max-md:h-fit max-md:mb-5 relative ml-auto mr-auto rounded-xl border-1 border-stone-400 bg-white/20 flex max-md:flex-col items-center justify-center text-justify'>
       <div id='Product-Pic' className='relative mr-auto  max-md:ml-auto h-2/3 w-1/2'>
-      <img src={Product} alt=""  className='h-100 max-md:-mt-8 -mt-10'/>
+      <img src={Product} alt=""  className='h-100 max-md:h-full max-md:mt-0 -mt-10'/>
       </div>
       <div id='Product-infos'className='flex flex-col w-1/2 h-full max-md:items-center max-md:justify-center max-md:text-center'> 
         <div id='Product-name' className='h-1/3 w-full mt-10 max-md:mt-3'>
-        <h1 className='font-syne font-bold text-4xl max-md:text-xl'>XVI - Full-White</h1>
-        <p className='font-syne font-semibold '>Available: 30 pieces</p>
+        <h1 className='font-syne font-bold text-4xl max-md:text-xl text-nowrap'>XVI - Full-White</h1>
+        <p className='font-syne font-semibold text-nowrap max-md:pb-4'>Available: 30 pieces</p>
         </div>
         <div id='size'>
             <div class="radio-input">
@@ -100,10 +110,11 @@ const ProductPage = () => {
             <button onClick={Quantity_addition} className='h-10 w-10 bg-black text-white rounded-r-4xl justify-end items-end ml-auto -mr-0.5'>+</button>
            </div>
         </div>
-        <div id='Product-price' className='h-1/3 w-full '><h1 id='Price' className='font-syne text-2xl font-bold text-black'>Price: <span className='text-white'>{price} $ </span> </h1></div>
-        <div className='flex gap-3'>
+        <div id='Product-price' className='h-1/3 w-full max-md:mt-4'><h1 id='Price' className='font-syne text-2xl font-bold text-black'>Price: <span className='text-white font-mono'>{price} $ </span> </h1></div>
+        <div className='flex gap-3 max-md:flex-col max-md:mt-5'>
         <button
-            class="cursor-pointer group relative bg-white hover:bg-zinc-300 text-black font-semibold text-sm px-2 py-3 rounded-full transition-all duration-200 ease-in-out shadow hover:shadow-lg w-40 h-12 mb-10"
+            class="cursor-pointer group relative bg-white hover:bg-zinc-300 text-black font-semibold text-sm px-2 py-3 rounded-full transition-all duration-200 ease-in-out shadow hover:shadow-lg w-40 h-12 mb-10 max-md:mb-2"
+            onClick={toggleForm}
           >
             <div class="relative flex items-center justify-center gap-2">
               <span class="relative inline-block overflow-hidden">
@@ -169,23 +180,30 @@ const ProductPage = () => {
           </div>
       </div>
      </div>
-     <div class="flex flex-col items-center justify-center h-screen hidden">
-  <div class="w-full max-w-md bg-white rounded-lg shadow-md p-6">
-    <h2 class="text-2xl font-bold text-gray-900 mb-4">Job Application Form</h2>
+     <div className='h-screen w-screen absolute z-10 flex items-center justify-center hidden' id='formulaire'>
+        <div class="w-full max-w-md bg-black rounded-lg shadow-md p-6 absolute z-20">
+            <div className='flex items-center justify-between mb-4 relative'>
+               <h2 class="text-2xl font-bold text-white mb-4">Buying formular</h2>
+                <button onClick={toggleForm} class="absolute cursor-pointer top-1 right-2">
+                  <img src={Close} alt="Close" className="h-6 w-6" />
+                </button>
+            </div>
+            <form class="flex flex-col">
+              <input type="text" class="bg-gray-50 text-black border-0 rounded-md p-2 mb-4 focus:bg-white focus:outline-none focus:ring-1 focus:ring-green-500 transition ease-in-out duration-150" placeholder="Full Name" />
+              <input type="email" class="bg-gray-50 text-black border-0 rounded-md p-2 mb-4 focus:bg-white focus:outline-none focus:ring-1 focus:ring-green-500 transition ease-in-out duration-150" placeholder="Email"/>
+              <input type="text" class="bg-gray-50 text-black border-0 rounded-md p-2 mb-4 focus:bg-white focus:outline-none focus:ring-1 focus:ring-green-500 transition ease-in-out duration-150" placeholder="Phone Number"/>
+              <input type="text" class="bg-gray-50 text-black border-0 rounded-md p-2 mb-4 focus:bg-white focus:outline-none focus:ring-1 focus:ring-green-500 transition ease-in-out duration-150" placeholder="Location"/>
+              <p className='text-lg text-white ml-3 font-bold font-syne'>Shipping:</p>
+              <p className='text-lg text-white ml-3 font-bold font-syne'>Product Price:</p>
+              <p className='text-lg text-white ml-3 font-bold font-syne'>Final Price: </p>
+              
+              <button type="submit" class="bg-gradient-to-r cursor-pointer from-green-500 to-green-700 text-white font-bold py-2 px-4 rounded-md mt-4 hover:bg-green-300 hover:to-green-900 transition ease-in-out duration-150">Submit</button>
+            </form>
+          </div>
+        <div class=" flex-col items-center justify-center h-full w-full z-0 bg-black/80 blur-3xl">
 
-    <form class="flex flex-col">
-      <input type="text" class="bg-gray-100 text-gray-900 border-0 rounded-md p-2 mb-4 focus:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" placeholder="Full Name" />
-      <input type="email" class="bg-gray-100 text-gray-900 border-0 rounded-md p-2 mb-4 focus:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" placeholder="Email"/>
-      <input type="text" class="bg-gray-100 text-gray-900 border-0 rounded-md p-2 mb-4 focus:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" placeholder="Phone Number"/>
-      <input type="text" class="bg-gray-100 text-gray-900 border-0 rounded-md p-2 mb-4 focus:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" placeholder="LinkedIn Profile URL"/>
-      <textarea name="cover_letter" class="bg-gray-100 text-gray-900 border-0 rounded-md p-2 mb-4 focus:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" placeholder="Cover Letter"></textarea>
-      <input type="file" class="bg-gray-100 text-gray-900 border-0 rounded-md p-2 mb-4 focus:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" placeholder="Resume"/>
-
-      <button type="submit" class="bg-gradient-to-r from-indigo-500 to-blue-500 text-white font-bold py-2 px-4 rounded-md mt-4 hover:bg-indigo-600 hover:to-blue-600 transition ease-in-out duration-150">Apply</button>
-    </form>
-  </div>
-</div>
-
+        </div>
+      </div>
     </div>
   )
 }
