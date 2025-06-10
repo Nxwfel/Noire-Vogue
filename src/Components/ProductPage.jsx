@@ -1,4 +1,4 @@
-import React , {useState} from 'react'
+import React, { useState } from 'react'
 import Bg3 from '../Assets/Bg3.png';
 import Product from '../Assets/Top.jpg';
 import '../Style/ProductPage.css';
@@ -32,6 +32,27 @@ const ProductPage = () => {
         if (formulaire) {
           formulaire.classList.toggle('hidden');
         }
+      };
+
+      const [deliveryNote, setDeliveryNote] = useState(null);
+
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const data = {
+          name: form[0].value,
+          email: form[1].value,
+          phone: form[2].value,
+          location: form[3].value,
+          shipping: "Standard", // ou récupère dynamiquement
+          productPrice: price,
+          finalPrice: price, // adapte si tu ajoutes des frais
+          quantity: quantity,
+          product: "XVI - Full-White"
+        };
+        setDeliveryNote(data);
+        setFormVisible(false);
+        document.getElementById('formulaire').classList.add('hidden');
       };
 
   return (
@@ -181,29 +202,69 @@ const ProductPage = () => {
       </div>
      </div>
      <div className='h-screen w-screen absolute z-10 flex items-center justify-center hidden' id='formulaire'>
-        <div class="w-full max-w-md bg-black rounded-lg shadow-md p-6 absolute z-20">
-            <div className='flex items-center justify-between mb-4 relative'>
-               <h2 class="text-2xl font-bold text-white mb-4">Buying formular</h2>
-                <button onClick={toggleForm} class="absolute cursor-pointer top-1 right-2">
-                  <img src={Close} alt="Close" className="h-6 w-6" />
-                </button>
-            </div>
-            <form class="flex flex-col">
-              <input type="text" class="bg-gray-50 text-black border-0 rounded-md p-2 mb-4 focus:bg-white focus:outline-none focus:ring-1 focus:ring-green-500 transition ease-in-out duration-150" placeholder="Full Name" />
-              <input type="email" class="bg-gray-50 text-black border-0 rounded-md p-2 mb-4 focus:bg-white focus:outline-none focus:ring-1 focus:ring-green-500 transition ease-in-out duration-150" placeholder="Email"/>
-              <input type="text" class="bg-gray-50 text-black border-0 rounded-md p-2 mb-4 focus:bg-white focus:outline-none focus:ring-1 focus:ring-green-500 transition ease-in-out duration-150" placeholder="Phone Number"/>
-              <input type="text" class="bg-gray-50 text-black border-0 rounded-md p-2 mb-4 focus:bg-white focus:outline-none focus:ring-1 focus:ring-green-500 transition ease-in-out duration-150" placeholder="Location"/>
-              <p className='text-lg text-white ml-3 font-bold font-syne'>Shipping:</p>
-              <p className='text-lg text-white ml-3 font-bold font-syne'>Product Price:</p>
-              <p className='text-lg text-white ml-3 font-bold font-syne'>Final Price: </p>
-              
-              <button type="submit" class="bg-gradient-to-r cursor-pointer from-green-500 to-green-700 text-white font-bold py-2 px-4 rounded-md mt-4 hover:bg-green-300 hover:to-green-900 transition ease-in-out duration-150">Submit</button>
-            </form>
+        <div className="w-full max-w-md bg-black rounded-lg shadow-md p-6 absolute z-20">
+          <div className='flex items-center justify-between mb-4 relative'>
+            <h2 className="text-2xl font-bold text-white mb-4">Buying formular</h2>
+            <button onClick={toggleForm} className="absolute cursor-pointer top-1 right-2">
+              <img src={Close} alt="Close" className="h-6 w-6" />
+            </button>
           </div>
-        <div class=" flex-col items-center justify-center h-full w-full z-0 bg-black/80 blur-3xl">
-
+          <form className="flex flex-col" onSubmit={handleSubmit}>
+            <input type="text" className="bg-gray-50 text-black border-0 rounded-md p-2 mb-4 focus:bg-white focus:outline-none focus:ring-1 focus:ring-green-500 transition ease-in-out duration-150" placeholder="Full Name" required />
+            <input type="email" className="bg-gray-50 text-black border-0 rounded-md p-2 mb-4 focus:bg-white focus:outline-none focus:ring-1 focus:ring-green-500 transition ease-in-out duration-150" placeholder="Email" required />
+            <input type="text" className="bg-gray-50 text-black border-0 rounded-md p-2 mb-4 focus:bg-white focus:outline-none focus:ring-1 focus:ring-green-500 transition ease-in-out duration-150" placeholder="Phone Number" required />
+            <input type="text" className="bg-gray-50 text-black border-0 rounded-md p-2 mb-4 focus:bg-white focus:outline-none focus:ring-1 focus:ring-green-500 transition ease-in-out duration-150" placeholder="Location" required />
+            <p className='text-lg text-white ml-3 font-bold font-syne'>Shipping: Standard</p>
+            <p className='text-lg text-white ml-3 font-bold font-syne'>Product Price: {price} $</p>
+            <p className='text-lg text-white ml-3 font-bold font-syne'>Final Price: {price} $</p>
+            <button type="submit" className="bg-gradient-to-r cursor-pointer from-green-500 to-green-700 text-white font-bold py-2 px-4 rounded-md mt-4 hover:bg-green-300 hover:to-green-900 transition ease-in-out duration-150">Submit</button>
+          </form>
         </div>
+        <div className="flex-col items-center justify-center h-full w-full z-0 bg-black/80 blur-3xl"></div>
       </div>
+
+      {/* Bon de livraison */}
+      {deliveryNote && (
+        <div className="fixed inset-0 z-30 flex items-center justify-center bg-black/70">
+          <div className="bg-white rounded-xl shadow-2xl p-8 w-full max-w-lg" id="delivery-note">
+            <h2 className="text-3xl font-bold mb-4 text-green-700">Bon de livraison</h2>
+            <p><span className="font-bold">Full Name:</span> {deliveryNote.name}</p>
+            <p><span className="font-bold">Email:</span> {deliveryNote.email}</p>
+            <p><span className="font-bold">Phone:</span> {deliveryNote.phone}</p>
+            <p><span className="font-bold">Adresse:</span> {deliveryNote.location}</p>
+            <p><span className="font-bold">Product:</span> {deliveryNote.product}</p>
+            <p><span className="font-bold">Quantity:</span> {deliveryNote.quantity}</p>
+            <p><span className="font-bold">Unit Price:</span> {price} $</p>
+            <p><span className="font-bold">Total:</span> {deliveryNote.finalPrice} $</p>
+            <div className="flex gap-4 mt-6">
+              <button
+                className="bg-green-600 text-white px-4 py-2 rounded"
+                onClick={() => setDeliveryNote(null)}
+              >
+                Close
+              </button>
+              <button
+                className="bg-blue-600 text-white px-4 py-2 rounded"
+                onClick={() => {
+                  const printContents = document.getElementById('delivery-note').innerHTML;
+                  const win = window.open('', '', 'height=700,width=700');
+                  win.document.write('<html><head><title>Bon de livraison</title>');
+                  win.document.write('<style>body{font-family:sans-serif;padding:2rem;} h2{color:#15803d;}</style>');
+                  win.document.write('</head><body >');
+                  win.document.write(printContents);
+                  win.document.write('</body></html>');
+                  win.document.close();
+                  win.focus();
+                  win.print();
+                  win.close();
+                }}
+              >
+                Print
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
