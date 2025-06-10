@@ -1,5 +1,5 @@
 import React from 'react'
-import Bg from '../assets/Bg3.png';
+import Bg from '../Assets/Bg3.png';
 import {Link} from "react-router-dom";
 const ClientSignup = () => {
   return (
