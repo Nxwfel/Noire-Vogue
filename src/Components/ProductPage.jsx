@@ -57,7 +57,7 @@ const ProductPage = () => {
 
   return (
     <div 
-    className='h-screen max-lg:h-fit w-screen bg-cover bg-center flex flex-col'
+    className='h-screen max-lg:min-h-fit w-screen bg-cover bg-center flex flex-col'
     style={{ backgroundImage: `url(${Bg3})` }}
     >
       <div className='h-10 w-10 rounded-full bg-white/15 border-white border-1 absolute justify-center top-7 right-5'>
